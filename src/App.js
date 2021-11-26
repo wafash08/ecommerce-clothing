@@ -1,12 +1,14 @@
 import { Routes, Route, Link } from "react-router-dom";
 import HomePage from "./pages/homepage/homepage";
 import ShopPage from "./pages/shoppage/shopPage";
+import Header from "./components/header/header";
 
 import "./App.css";
 
 function App() {
   return (
     <div>
+      <Header />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/shop' element={<ShopPage />} />
