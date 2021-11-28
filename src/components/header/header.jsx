@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
+import { auth } from "../../firebase/firebase.utils";
 
 import "./header.scss";
 
-export default function Header() {
+export default function Header({ currentUser }) {
   return (
     <header className='header'>
       <NavLink className='logo-container' to='/'>
@@ -22,6 +23,15 @@ export default function Header() {
         >
           CONTACT
         </NavLink>
+        {currentUser ? (
+          <button className='option' onClick={() => auth.signOut()}>
+            SIGN OUT
+          </button>
+        ) : (
+          <NavLink className='option' to='/signin'>
+            SIGN IN
+          </NavLink>
+        )}
       </nav>
     </header>
   );
