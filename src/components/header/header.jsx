@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { auth } from "../../firebase/firebase.utils";
 
 import "./header.scss";
 
-export default function Header({ currentUser }) {
+function Header({ currentUser }) {
   return (
     <header className='header'>
       <NavLink className='logo-container' to='/'>
@@ -36,3 +37,9 @@ export default function Header({ currentUser }) {
     </header>
   );
 }
+
+const mapStateToProps = ({ user: { currentUser } }) => ({
+  currentUser: currentUser,
+});
+
+export default connect(mapStateToProps)(Header);
