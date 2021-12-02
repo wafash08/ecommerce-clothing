@@ -37,12 +37,19 @@ class App extends Component {
   }
 
   render() {
+    // const { currentUser } = this.props;
     return (
       <div>
         <Header />
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/shop' element={<ShopPage />} />
+          {/* <Route
+            path='/signin'
+            render={() =>
+              currentUser ? <Navigate to='/' /> : <SignInSignUp />
+            }
+          /> */}
           <Route path='/signin' element={<SignInSignUp />} />
           <Route
             path='*'
@@ -59,8 +66,12 @@ class App extends Component {
   }
 }
 
+const mapStatetoProps = ({ user: { currentUser } }) => ({
+  currentUser,
+});
+
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user)),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStatetoProps, mapDispatchToProps)(App);
