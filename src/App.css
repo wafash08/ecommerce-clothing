@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+button:focus,
+a:focus {
+  outline: 2px dashed black;
+}
+
 body {
   font-family: "Open Sans Condensed", sans-serif;
   padding: 20px 60px;

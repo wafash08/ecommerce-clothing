@@ -11,7 +11,8 @@
   background-color: transparent;
   padding: 0;
 
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
 
     & .background-image {
@@ -22,10 +23,6 @@
     & .content {
       opacity: 0.9;
     }
-  }
-
-  &:focus {
-    outline: 2px dashed black;
   }
 
   &.large {
