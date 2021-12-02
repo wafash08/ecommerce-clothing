@@ -8,6 +8,8 @@
   border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
+  background-color: transparent;
+  padding: 0;
 
   &:hover {
     cursor: pointer;
@@ -20,6 +22,10 @@
     & .content {
       opacity: 0.9;
     }
+  }
+
+  &:focus {
+    outline: 2px dashed black;
   }
 
   &.large {
