@@ -28,7 +28,9 @@
 
   .remove-button {
     width: 12%;
-    padding-left: 12px;
     cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
   }
 }
