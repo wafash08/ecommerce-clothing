@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, Navigate, Outlet } from "react-router-dom";
 import { connect } from "react-redux";
 import HomePage from "./pages/homepage/homepage";
 import ShopPage from "./pages/shoppage/shopPage";
@@ -37,10 +37,11 @@ class App extends Component {
   }
 
   render() {
-    // const { currentUser } = this.props;
+    const { currentUser } = this.props;
     return (
       <div>
         <Header />
+        <Outlet />
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/shop' element={<ShopPage />} />
