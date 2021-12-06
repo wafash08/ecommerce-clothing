@@ -6,7 +6,10 @@ import { createStructuredSelector } from "reselect";
 import HomePage from "./pages/homepage/homepage";
 import ShopPage from "./pages/shoppage/shopPage";
 import SignInSignUp from "./pages/sign-in-sign-up-page/sign-in-sign-up";
+import Checkoutpage from "./pages/checkoutpage/checkoutpage";
+
 import Header from "./components/header/header";
+
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.action";
 import { selectCurrentUser } from "./redux/user/user.selector";
@@ -55,6 +58,7 @@ class App extends Component {
             }
           /> */}
           <Route path='/signin' element={<SignInSignUp />} />
+          <Route path='/checkout' element={<Checkoutpage />} />
           <Route
             path='*'
             element={
