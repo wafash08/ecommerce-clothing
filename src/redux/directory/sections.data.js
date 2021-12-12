@@ -1,9 +1,9 @@
 /* Used as starting data for Directory */
-import hats from "./images/hats.png";
-import jackets from "./images/jackets.png";
-import sneakers from "./images/sneakers.png";
-import womens from "./images/womens.png";
-import mens from "./images/men.png";
+import hats from "../../assets/images/hats.png";
+import jackets from "../../assets/images/jackets.png";
+import sneakers from "../../assets/images/sneakers.png";
+import womens from "../../assets/images/womens.png";
+import mens from "../../assets/images/men.png";
 
 const SECTIONS_DATA = [
   {
