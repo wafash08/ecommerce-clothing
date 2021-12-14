@@ -15,6 +15,7 @@ import { setCurrentUser } from "./redux/user/user.action";
 import { selectCurrentUser } from "./redux/user/user.selector";
 
 import "./App.css";
+import Category from "./pages/categorypage/category";
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -50,15 +51,17 @@ class App extends Component {
         <Outlet />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/shop' element={<ShopPage />} />
+          <Route path='shop' element={<ShopPage />}>
+            <Route path=':category' element={<Category />} />
+          </Route>
           {/* <Route
             path='/signin'
             render={() =>
               currentUser ? <Navigate to='/' /> : <SignInSignUp />
             }
           /> */}
-          <Route path='/signin' element={<SignInSignUp />} />
-          <Route path='/checkout' element={<Checkoutpage />} />
+          <Route path='signin' element={<SignInSignUp />} />
+          <Route path='checkout' element={<Checkoutpage />} />
           <Route
             path='*'
             element={
