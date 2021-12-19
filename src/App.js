@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Routes, Route, Link, Navigate, Outlet } from "react-router-dom";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
@@ -15,7 +15,6 @@ import { setCurrentUser } from "./redux/user/user.action";
 import { selectCurrentUser } from "./redux/user/user.selector";
 
 import "./App.css";
-import Category from "./pages/categorypage/category";
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -48,12 +47,9 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Outlet />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='shop' element={<ShopPage />}>
-            <Route path=':category' element={<Category />} />
-          </Route>
+          <Route path='shop/*' element={<ShopPage />} />
           {/* <Route
             path='/signin'
             render={() =>
