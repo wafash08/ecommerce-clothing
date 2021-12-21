@@ -42,7 +42,9 @@ function Checkoutpage({ cartItems, total }) {
         4242 4242 4242 4242
         <br />- Exp: any future date - CVV: 123
       </div>
-      <StripeButton price={total} />
+      <div className='stripe-button-container'>
+        <StripeButton price={total} />
+      </div>
     </div>
   );
 }
