@@ -19,10 +19,8 @@ function CollectionPage({ collection }) {
   );
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    collection: selectCollection(ownProps.urlParams[`*`])(state),
-  };
-};
+const mapStateToProps = (state, ownProps) => ({
+  collection: selectCollection(ownProps.urlParams[`*`])(state),
+});
 
 export default connect(mapStateToProps)(CollectionPage);

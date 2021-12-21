@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Routes, Route, Link, Navigate } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
@@ -43,7 +43,6 @@ class App extends Component {
   }
 
   render() {
-    const { currentUser } = this.props;
     return (
       <div>
         <Header />

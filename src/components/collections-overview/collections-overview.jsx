@@ -6,9 +6,17 @@ import CollectionPreview from "../collection-preview/collection-preview";
 import "./collections-overview.scss";
 
 function CollectionsOverview({ collections }) {
+  // for (let key in collections) {
+  //   for (const alsoKey in collections[key]) {
+  //     console.log(collections[key][alsoKey]);
+  //   }
+  // }
+
+  // DO SOMETHING ON COLLECTIONS PROPS
+
   return (
     <div className='collections-overview'>
-      {collections.map(({ id, ...otherCollectionProps }) => (
+      {collections[`items`].map(({ id, ...otherCollectionProps }) => (
         <CollectionPreview key={id} {...otherCollectionProps} />
       ))}
     </div>
