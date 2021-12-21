@@ -1,4 +1,7 @@
-.collection-item {
+import styled from "styled-components";
+
+export const CollectionItemContainer = styled.div`
+  margin-bottom: 30px;
   width: 22vw;
   display: flex;
   flex-direction: column;
@@ -32,21 +35,21 @@
       display: flex;
     }
   }
+`;
 
-  .collection-footer {
-    width: 100%;
-    height: 5%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 18px;
+export const CollectionFooter = styled.div`
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+`;
 
-    .name {
-      width: 90%;
-      margin-bottom: 15px;
-    }
+export const Name = styled.span`
+  width: 80%;
+  margin-bottom: 15px;
+`;
 
-    .price {
-      width: 10%;
-    }
-  }
-}
+export const Price = styled.span`
+  max-width: 20%;
+`;
