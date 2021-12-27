@@ -26,7 +26,7 @@ function Header({ currentUser, isHidden }) {
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? "option active" : "option")}
-          to='/'
+          to='/contact'
         >
           CONTACT
         </NavLink>

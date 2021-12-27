@@ -9,6 +9,10 @@ export const CollectionItemContainer = styled.div`
   align-items: center;
   position: relative;
 
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
   .image {
     width: 100%;
     height: 95%;
