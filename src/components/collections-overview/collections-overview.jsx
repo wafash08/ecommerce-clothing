@@ -8,10 +8,9 @@ import "./collections-overview.scss";
 function CollectionsOverview({ collections }) {
   return (
     <div className='collections-overview'>
-      {collections.map(({ id, ...otherCollectionProps }) => {
-        console.log(otherCollectionProps);
-        return <CollectionPreview key={id} {...otherCollectionProps} />;
-      })}
+      {collections.map(({ id, ...otherCollectionProps }) => (
+        <CollectionPreview key={id} {...otherCollectionProps} />
+      ))}
     </div>
   );
 }
