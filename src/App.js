@@ -7,41 +7,13 @@ import HomePage from "./pages/homepage/homepage";
 import ShopPage from "./pages/shoppage/shopPage";
 import SignInSignUp from "./pages/sign-in-sign-up-page/sign-in-sign-up";
 import Checkoutpage from "./pages/checkoutpage/checkoutpage";
-
 import Header from "./components/header/header";
 
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-import { setCurrentUser } from "./redux/user/user.action";
 import { selectCurrentUser } from "./redux/user/user.selector";
 
 import "./App.css";
 
 class App extends Component {
-  unsubscribeFromAuth = null;
-
-  componentDidMount() {
-    const { setCurrentUser } = this.props;
-
-    //   this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-    //     if (userAuth) {
-    //       const userRef = await createUserProfileDocument(userAuth);
-
-    //       userRef.onSnapshot(snapShot => {
-    //         setCurrentUser({
-    //           id: snapShot.id,
-    //           ...snapShot.data(),
-    //         });
-    //       });
-    //     } else {
-    //       setCurrentUser(userAuth);
-    //     }
-    //   });
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
-
   render() {
     return (
       <div>
@@ -49,12 +21,6 @@ class App extends Component {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='shop/*' element={<ShopPage />} />
-          {/* <Route
-            path='/signin'
-            render={() =>
-              currentUser ? <Navigate to='/' /> : <SignInSignUp />
-            }
-          /> */}
           <Route path='signin' element={<SignInSignUp />} />
           <Route path='checkout' element={<Checkoutpage />} />
           <Route
@@ -76,8 +42,4 @@ const mapStatetoProps = createStructuredSelector({
   currentUser: selectCurrentUser,
 });
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user)),
-});
-
-export default connect(mapStatetoProps, mapDispatchToProps)(App);
+export default connect(mapStatetoProps)(App);
